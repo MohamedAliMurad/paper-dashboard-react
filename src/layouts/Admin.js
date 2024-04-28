@@ -28,9 +28,52 @@ import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
 
+  const courses = [
+    {
+      courseName: "ghraphics",
+      id: 868
+    },
+    {
+      courseName: "JavaScript Fundamentals",
+      id: 869
+    },
+    {
+      courseName: "Introduction to Data Science",
+      id: 870
+    },
+    {
+      courseName: "Web Development Basics",
+      id: 871
+    },
+    {
+      courseName: "Graphic Design Principles",
+      id: 872
+    },
+    {
+      courseName: "Python Programming",
+      id: 873
+    },
+    {
+      courseName: "Machine Learning Essentials",
+      id: 874
+    },
+    {
+      courseName: "Mobile App Development",
+      id: 875
+    },
+    {
+      courseName: "UI/UX Design Fundamentals",
+      id: 876
+    },
+    {
+      courseName: "Database Management",
+      id: 877
+    }
+  ];
+
 var ps;
 
-function Dashboard(props) {
+function Home(props) {
   const [backgroundColor, setBackgroundColor] = React.useState("black");
   const [activeColor, setActiveColor] = React.useState("info");
   const mainPanel = React.useRef();
@@ -64,6 +107,7 @@ function Dashboard(props) {
         routes={routes}
         bgColor={backgroundColor}
         activeColor={activeColor}
+        courses={courses}
       />
       <div className="main-panel" ref={mainPanel}>
         <DemoNavbar {...props} />
@@ -79,7 +123,7 @@ function Dashboard(props) {
             );
           })}
         </Routes>
-        <Footer fluid />
+        {/* <Footer fluid /> */}
       </div>
       <FixedPlugin
         bgColor={backgroundColor}
@@ -91,4 +135,4 @@ function Dashboard(props) {
   );
 }
 
-export default Dashboard;
+export default Home;

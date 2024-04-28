@@ -359,3 +359,24 @@
 .panel-header-lg{
   height: 380px
 }
+
+
+.courses{
+    font-size: 200%;
+    font-weight: bold;
+    color: #ddd;
+    padding: 20px;
+    border-bottom: #dddddd11 solid 1px;
+
+}
+
+.course-name{
+    font-size: 150%;
+    border-bottom: #dddddd11 solid 1px;
+    padding: 20px;
+}
+
+.course-name a {
+    color: #ddd !important;
+    text-decoration: none;
+}

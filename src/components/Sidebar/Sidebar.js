@@ -17,16 +17,18 @@
 
 */
 import React from "react";
-import { NavLink, useLocation } from "react-router-dom";
-import { Nav } from "reactstrap";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Card, CardBody, CardTitle, Col, Nav, Row } from "reactstrap";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
 
-import logo from "logo.svg";
+import  logo from "../../assets/img/O6U-Logo.jpg";
+
 
 var ps;
 
 function Sidebar(props) {
+
   const location = useLocation();
   const sidebar = React.useRef();
   // verifies if routeName is the one active (in browser input)
@@ -52,41 +54,40 @@ function Sidebar(props) {
       data-color={props.bgColor}
       data-active-color={props.activeColor}
     >
-      <div className="logo">
-        <a
-          href="https://www.creative-tim.com"
+      <div className="logo" >
+        <Link
+          to="/admin/home"
           className="simple-text logo-mini"
         >
           <div className="logo-img">
-            <img src={logo} alt="react-logo" />
+            <img src={logo} alt="O6U-logo" />
           </div>
-        </a>
-        <a
-          href="https://www.creative-tim.com"
+        </Link>
+        <Link
+          to="/admin/home"
           className="simple-text logo-normal"
         >
-          Creative Tim
-        </a>
+          O6U
+        </Link>
       </div>
       <div className="sidebar-wrapper" ref={sidebar}>
-        <Nav>
-          {props.routes.map((prop, key) => {
-            return (
-              <li
-                className={
-                  activeRoute(prop.path) + (prop.pro ? " active-pro" : "")
-                }
-                key={key}
-              >
-                <NavLink to={prop.layout + prop.path} className="nav-NavLink">
-                  <i className={prop.icon} />
-                  <p>{prop.name}</p>
-                </NavLink>
-              </li>
-            );
-          })}
-        </Nav>
+        <div className="text-center">
+          <div className="courses"><i className="nc-icon nc-single-copy-04"/> Courses</div>
+          {
+            props.courses.map((course, key) => {
+              // console.log(course);
+              return (
+                <div className="course-name" key={course.id} course={course}>
+                <Link to={`/admin/course/${course.id}`}>
+                  {course.courseName}
+                </Link>
+                </div>
+              );
+            })
+          }
+        </div>
       </div>
+
     </div>
   );
 }

@@ -16,21 +16,24 @@
 * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 */
-import Dashboard from "views/Dashboard.js";
 import Notifications from "views/Notifications.js";
 import Icons from "views/Icons.js";
 import Typography from "views/Typography.js";
 import TableList from "views/Tables.js";
 import Maps from "views/Map.js";
 import UserPage from "views/User.js";
-import UpgradeToPro from "views/Upgrade.js";
+import Quizes from "./views/Quizes.js";
+import Home from "./views/Home.js";
+import Dashboard from "./views/Dashboard copy.js";
+import Course from "./views/Course.js";
+
 
 var routes = [
   {
-    path: "/dashboard",
-    name: "Dashboard",
-    icon: "nc-icon nc-bank",
-    component: <Dashboard />,
+    path: "/home",
+    name: "Home",
+    icon: "nc-icon nc-home",
+    component: <Home/>,
     layout: "/admin",
   },
   {
@@ -38,6 +41,16 @@ var routes = [
     name: "Icons",
     icon: "nc-icon nc-diamond",
     component: <Icons />,
+    layout: "/admin",
+  },
+  {
+
+  },
+  {
+    path: "/quizes",
+    name: "Quizes",
+    icon: "nc-icon nc-paper",
+    component: <Quizes />,
     layout: "/admin",
   },
   {
@@ -70,18 +83,18 @@ var routes = [
   },
   {
     path: "/typography",
-    name: "Typography",
+    name: "Ahmed",
     icon: "nc-icon nc-caps-small",
     component: <Typography />,
     layout: "/admin",
   },
   {
-    pro: true,
-    path: "/upgrade",
-    name: "Upgrade to PRO",
-    icon: "nc-icon nc-spaceship",
-    component: <UpgradeToPro />,
+    path: "/Course/:id",
+    name: "Course",
+    icon: "nc-icon nc-caps-paper",
+    component: <Course />,
     layout: "/admin",
   },
+
 ];
 export default routes;

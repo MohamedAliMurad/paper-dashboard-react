@@ -362,7 +362,7 @@ const icons = [
     content: "\\ea56",
   },
   {
-    name: "nc-tag-content",
+    name: "nc-tag-content", 
     content: "\\ea57",
   },
   {
