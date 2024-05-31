@@ -54,6 +54,7 @@ function Home() {
                     <div className="numbers">
                       <p className="card-category">Capacity</p>
                       <CardTitle tag="p">150GB</CardTitle>
+
                       <p />
                     </div>
                   </Col>

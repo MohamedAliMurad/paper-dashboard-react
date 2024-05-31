@@ -19,7 +19,7 @@
 import React from "react";
 // javascript plugin used to create scrollbars on windows
 import PerfectScrollbar from "perfect-scrollbar";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Outlet, Route, Routes, useLocation } from "react-router-dom";
 
 import DemoNavbar from "components/Navbars/DemoNavbar.js";
 import Footer from "components/Footer/Footer.js";
@@ -27,6 +27,7 @@ import Sidebar from "components/Sidebar/Sidebar.js";
 import FixedPlugin from "components/FixedPlugin/FixedPlugin.js";
 
 import routes from "routes.js";
+import RightBar from "../components/RightBar/RightBar.js";
 
   const courses = [
     {
@@ -111,6 +112,7 @@ function Home(props) {
       />
       <div className="main-panel" ref={mainPanel}>
         <DemoNavbar {...props} />
+      {/* <RightBar/> */}
         <Routes>
           {routes.map((prop, key) => {
             return (
@@ -123,7 +125,7 @@ function Home(props) {
             );
           })}
         </Routes>
-        {/* <Footer fluid /> */}
+        <Footer fluid />
       </div>
       <FixedPlugin
         bgColor={backgroundColor}
